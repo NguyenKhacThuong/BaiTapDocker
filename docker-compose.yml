@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  backend:
+    build: ./backend
+    image: yourdockerhubusername/backend-api:latest
+    ports:
+      - "4000:4000"
+
+  frontend:
+    build: ./frontend
+    image: yourdockerhubusername/frontend-app:latest
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
